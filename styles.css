@@ -1,0 +1,716 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f2e1d;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #1b4d36;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo-wrapper {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-links,
+.Login {
+  display: flex;
+  gap: 65px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a,
+.Login a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 8px 14px;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover,
+.Login a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.page-header {
+  background-color: #0f2e1d;
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+}
+
+.page-header h2 {
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+
+.page-header p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.page-container,
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #222;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+
+.container.auth-container {
+  max-width: 450px; 
+  padding: 30px 25px;
+}
+
+.page-noclegi .container {
+  background-color: transparent;
+  box-shadow: none;
+  color: white;
+}
+
+.login-form label,
+.register-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.login-form input,
+.register-form input,
+.password-wrapper input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.ui-btn,
+button[type="submit"],
+.login-form button,
+.register-form button {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #1a73e8;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 12px;
+  text-decoration: none;
+}
+
+.ui-btn:hover,
+button[type="submit"]:hover,
+.login-form button:hover,
+.register-form button:hover {
+  background: #0f56b3;
+}
+
+.ui-btn.danger {
+  background-color: #c62828;
+}
+
+.ui-btn.danger:hover {
+  background-color: #b71c1c;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.komunikat.success {
+  background-color: #388e3c;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.komunikat.error {
+  background-color: #c62828ba;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  max-width: 450px;
+  margin: 0 auto 20px auto;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.no-plans-message {
+  font-style: italic;
+  color: #666;
+}
+
+.checkbox-group {
+  display: flex;
+  margin-bottom: 25px;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.checkbox-group label {
+  cursor: pointer;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(227, 226, 204, 0.558);
+  padding: 0 10px;
+  color: rgb(40, 40, 40);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.attractions {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.attractions h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.attraction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.attraction-card {
+  background-color: white;
+  color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.attraction-card p {
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.ui-cards-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.ui-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  color: #222;
+}
+
+.ui-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.ui-card h3 {
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.ui-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.ui-card-price {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #0b5ed7;
+}
+
+.ui-card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 12px;
+}
+
+.ui-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plan-create-section {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.plan-create-section h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #1b4d36;
+}
+
+.plan-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-create-form .ui-btn {
+  width: fit-content !important;
+  align-self: flex-start !important;
+  padding: 10px 20px;
+}
+
+.plan-create-form label {
+  font-weight: bold;
+  color: #222;
+}
+
+.plan-create-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.plan-list-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.plan-list-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1b4d36;
+}
+
+.plan-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.plan-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.plan-card h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+.plan-card p {
+  font-size: 16px;
+  color: #222;
+}
+
+.plan-details-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.plan-details-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1b4d36;
+}
+
+.plan-block {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+}
+
+.plan-block h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #1b4d36;
+}
+
+.plan-item {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.plan-item p,
+.plan-item strong,
+.plan-block p,
+.plan-block strong {
+  color: #222;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b4d36;
+  color: white;
+  padding: 15px 20px;
+  font-size: 14px;
+  margin-top: auto; 
+  flex-shrink: 0;
+}
+
+.site-footer a {
+  color: #aee6c5;
+  text-decoration: none;
+}
+
+.page-noclegi {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0f2e1d;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.page-noclegi h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.page-noclegi .search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  background-color: #1b4d36;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.page-noclegi .search-form label {
+  font-weight: bold;
+  color: #fff;
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.page-noclegi .search-form input[type="text"],
+.page-noclegi .search-form select {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #222;
+  min-width: 220px;
+}
+
+.page-noclegi .search-form button {
+  padding: 10px 18px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.page-noclegi .search-form button:hover {
+  background-color: #0f56b3;
+}
+
+.page-noclegi .card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.page-noclegi .card h2 {
+  margin-top: 0;
+  font-size: 1.4em;
+  color: #0066cc;
+}
+
+.page-noclegi .card .address {
+  margin: 8px 0;
+  color: #444;
+}
+
+.page-noclegi .card .distance {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.page-noclegi .map {
+  width: 100%;
+  height: 250px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-top: 15px;
+}
+
+.page-noclegi .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #0066ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.page-noclegi .btn:hover {
+  background: #004bbd;
+}
+
+.btn-comment {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px 15px; 
+  background: #1a73e8;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.btn-comment:hover {
+  background: #0f56b3; 
+}
+
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+}
+
+#modal-content {
+  background: #fff;
+  color: #333; 
+  width: 90%;
+  max-width: 500px;
+  margin: 5% auto;
+  padding: 25px; 
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#close-modal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+#close-modal:hover {
+  color: #000; 
+}
+
+#comments-list {
+  margin: 15px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  color: #333; 
+}
+
+.comment-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0; 
+}
+
+.comment-meta {
+  font-size: 0.8em;
+  color: #777;
+  margin-left: 5px; 
+}
+
+#comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  margin-bottom: 10px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+#comment-form button {
+  background: #4CAF50; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px;
+}
+
+#comment-form button:hover {
+  background: #45a049; 
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .page-header {
+    padding: 30px 15px;
+    flex: 0 0 auto;
+    display: block;
+  }
+
+  .page-header h2 {
+    font-size: 24px;
+  }
+
+  .page-container {
+    width: 95%;
+    margin: 20px auto;
+    flex: 1 0 auto;
+  }
+
+  .ui-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ui-btn.danger {
+    margin-left: 0;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+
+  .plan-details-section,
+  .plan-list-section,
+  .plan-create-section {
+    width: 100%;
+    padding: 0 15px;
+    margin: 20px auto;
+  }
+}
